@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+  <head>
+
+  <meta charset="UTF-8">
+  <title>iTravel App</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- My CSS -->
+
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+  </head>
+
+  <body>
+
+  <!-- User Registration Screen -->
+    <div class="container">
+    <div class="row">
+    <div class="col-lg-12 your-profile">
+    <br>
+    <br>
+
+  <!-- Background Logo Watermark -->
+      <a class="brand app-logo center-block" style="margin: 0; float: none; text-align:center" href="#">
+      <img alt="" src="assets/images/iTravel-logo.png"></a>
+      <div class="row your-profile">
+      <div class="col-lg-3 col-md-offset-5">
+
+  <!-- User Input Form -->
+
+      <form class="form-signin" role="form">
+      <div id="status"></div>
+
+  <!-- User Form Header-->
+
+      <h3 class="form-signin-heading">Login In</h3>
+      <br>
+
+  <!-- User Form Input Fields-->
+         <div id="user_name_err"></div>
+         <label for="user_name" class="sr-only">User Name</label>
+           <input type="text" id="user_name" class="form-control" placeholder="User Name">
+         <br>
+          <label for="user_password" class="sr-only">Password</label>
+          <div id="user_password_err"></div>
+            <input type="password" id="user_password" class="form-control" placeholder="Password">
+
+            <a class="forgot_password" value="forgot-password" href="#">Forgot Password?</a>
+            <br>
+         
+          <button class="btn btn-primary btn-block" id="user_login" type="submit" style="margin-bottom: 10px">Login In</button>
+      </form>
+
+      </div>
+      </div>   
+      </div>
+
+    </div>   
+    </div>
+
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
+
+    <!-- Moment.js Reference -->
+    <!-- <script src="http://momentjs.com/downloads/moment.js"></script>   -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/javascript/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<!-- load jQuery UI CSS theme -->
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+</body>
+</html>

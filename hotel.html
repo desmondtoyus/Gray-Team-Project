@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Console Logging Ticket Master</title>
+</head>
+<body>
+
+<!-- No HTML needed -->
+<script src=“http://code.jquery.com/jquery-2.1.3.min.js“></script>
+<script type=“text/javascript”>
+
+ var queryURl =“https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyAPJuclKAITwBL3FZH08LdsZxR6IUr3OY4";
+
+ var json = {“request”: {
+        “slice”: [
+          {
+            “origin”: “LAX”,
+            “destination”: “PHX”,
+            “date”: "2017-08-04"
+          }
+        ],
+        “passengers”: {
+          “adultCount”: 1,
+          “infantInLapCount”: 0,
+          “infantInSeatCount”: 0,
+          “childCount”: 0,
+          “seniorCount”: 0
+        },
+        “solutions”: 20,
+        “refundable”: false
+  }};
+
+ $.ajax({
+    contentType: ‘application/json’,
+    data:
+    JSON.stringify(json)
+
+   ,
+    success: function(data){
+        console.log(data);
+    },
+    error: function(response){
+        console.log(response);
+
+   },
+    processData: false,
+    type: ‘POST’,
+    url: queryURl
+});
+</script>
+
+</body>
+</html>

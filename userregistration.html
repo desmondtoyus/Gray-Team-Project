@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+  <head>
+
+  <meta charset="UTF-8">
+  <title>Tripee App</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- My CSS -->
+
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <script language="JavaScript" src="assets/javascript/gen_validatorv4.js" type="text/javascript"></script>
+
+  </head>
+
+  <body>
+
+  <!-- User Registration Screen -->
+    <div class="container">
+    <div class="row">
+    <div class="col-lg-12 your-profile">
+    <br>
+    <br>
+
+  <!-- Background Logo Watermark -->
+      <a class="brand app-logo center-block" style="margin: 0; float: none; text-align:center" href="#">
+      <img alt="" src="assets/images/iTravel-logo.png"></a>
+      <div class="row your-profile">
+      <div class="col-lg-3 col-md-offset-5">
+
+  <!-- User Input Form -->
+
+      <form class="form-signin" role="form" name="myform" id="myform">
+      <div id="status"></div>
+        <h2 class="form-signin-heading">User Registration</h2>
+
+
+      <div id='myform_user_name_errorloc' class="error_strings"></div>
+    <label for="user_name" class="sr-only">User Name</label>
+      <input type="text" id="user_name" class="form-control" placeholder="User Name" name="user_name">
+
+    <div id='myform_user_first_name_errorloc' class="error_strings"></div>
+    <label for="user_first_name" class="sr-only">First Name</label>
+      <input type="text" id="user_first_name" class="form-control" placeholder="First Name" name="user_first_name">
+    
+    <label for="user_last_name" class="sr-only">Last Name</label>
+     <div id='myform_user_last_name_errorloc' class="error_strings"></div>
+    <div id='myform_Name_errorloc' class="error_strings"></div>
+      <input type="text" id="user_last_name" class="form-control" placeholder="Last Name" name="user_last_name">
+      
+        <label for="user_email" class="sr-only">Email address</label>
+       <div id='myform_user_email_errorloc' class="error_strings"></div>
+        <input type="email" id="user_email" class="form-control" placeholder="Email address" type="email" name="user_email" >
+    
+        <label for="user-password" class="sr-only">Password</label>
+        <div id='myform_user_password_errorloc' class="error_strings"></div>
+        <input type="password" id="user_password" class="form-control" placeholder="Password" name="user_password">
+         
+         <label for="user_password_conf" class="sr-only">Confirm Password</label>
+          <div id='myform_user_password_conf_errorloc' class="error_strings"></div>
+        <input type="password" id="user_password_conf" class="form-control" placeholder="Password" name="user_password_conf">
+
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+    
+        <button class="btn btn-sm btn-primary btn-block" style="margin-bottom: 10px" id="sign_up">Sign Up</button> 
+      </form>
+       
+
+      </div>
+      </div>   
+      </div>
+
+    </div>   
+    </div>
+
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
+
+    <!-- Moment.js Reference -->
+    <!-- <script src="http://momentjs.com/downloads/moment.js"></script>   -->
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/javascript/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<!-- load jQuery UI CSS theme -->
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<!-- <script type="text/javascript">
+
+
+$.getScript("gen_validatorv4.js", function(){
+
+   alert("Script loaded but not necessarily executed.");
+   var frmvalidator  = new Validator("myform");
+    frmvalidator.EnableOnPageErrorDisplay();
+    frmvalidator.EnableMsgsTogether();
+    frmvalidator.addValidation("user_first_name","req","Please enter your First Name");
+    frmvalidator.addValidation("user_last_name","req",  "Please enter your Last Name");
+    frmvalidator.addValidation("user_email","email", "Invalid Email");
+    frmvalidator.addValidation("user_password","minlen=8", "Invalid Password (Minimum 8 character) ");
+    frmvalidator.addValidation("user_password_conf","minlen=8",  "Invalid Password (Minimum 8 character) ");
+});
+
+
+    
+  </script> -->
+</body>
+</html>
