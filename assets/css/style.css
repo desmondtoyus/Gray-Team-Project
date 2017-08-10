@@ -19,6 +19,19 @@ h2 {
     color: #782918;
 }*/
 
+/*Google font*/
+
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+body h1 h2 h3{
+   font-family: 'Lato', sans-serif;
+   color: #312c32;
+}
+.text-center {
+  font-size: 30px;
+  margin-top: 150px;
+}
+
 /* font Awesome http://fontawesome.io*/
 @import url('assets/css/bootstrap.min.css');
 @import url('assets/css/bootstrap-responsive.min.css');
@@ -87,7 +100,7 @@ label.error {
 .col-item .options-cart-round button {
   border-radius: 50%;
   padding:14px 16px;
-  
+
 }
 .col-item .options-cart-round button .fa {
   font-size:22px;
@@ -189,10 +202,6 @@ label.error {
 
 }
 
-/*.your-profile {
-  margin-top: 50px;
-}*/
-
 .sr-only{
   margin-bottom: 10px;
 }
@@ -201,12 +210,30 @@ label.error {
   height: 200px;
 }
 
+.form-control {
+  height: 45px;
+}
+
 #login {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 60px;
   padding-left: 60px;
   vertical-align: center;
+  background-color: #98dafc;
+  color: #312c32;
+  border: none;
+}
+
+#login:hover {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 60px;
+  padding-left: 60px;
+  vertical-align: center;
+  background-color: #312c32;
+  color: white;
+  border: none;
 }
 
 #sign_up {
@@ -215,6 +242,20 @@ label.error {
   padding-right: 60px;
   padding-left: 60px;
   vertical-align: center;
+  background-color: #98dafc;
+  color: #312c32;
+  border: none;
+}
+
+#sign_up:hover {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 60px;
+  padding-left: 60px;
+  vertical-align: center;
+  background-color: #312c32;
+  color: white;
+  border: none;
 }
 
 #facebook_login {
@@ -222,7 +263,19 @@ label.error {
   padding-bottom: 10px;
   padding-right: 50px;
   padding-left: 50px;
-  vertical-align: center;
+  background-color: #98dafc;
+  color: #312c32;
+  border: none;
+}
+
+#facebook_login:hover {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 50px;
+  padding-left: 50px;
+  background-color: #312c32;
+  color: white;
+  border: none;
 }
 
 #user_login {
@@ -231,16 +284,72 @@ label.error {
   padding-right: 60px;
   padding-left: 60px;
   vertical-align: center;
+  background-color: #98dafc;
+  color: #312c32;
+  border: none;
+}
+
+#user_login:hover {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 60px;
+  padding-left: 60px;
+  vertical-align: center;
+  background-color: #312c32;
+  color: white;
+  border: none;
 }
 
 #budget_submit {
   padding-top: 10px;
   padding-bottom: 10px;
+  padding-right: 112px;
+  padding-left: 112px;
+  vertical-align: center;
+  background-color: #98dafc;
+  color: #312c32;
+  border: none;
+}
+
+#budget_submit:hover {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 112px;
+  padding-left: 112px;
+  vertical-align: center;
+  background-color: #312c32;
+  color: white;
+  border: none;
+}
+#budget_submit2 {
+  padding-top: 10px;
+  padding-bottom: 10px;
   padding-right: 105px;
   padding-left: 105px;
   vertical-align: center;
+  background-color: #98dafc;
+  color: #312c32;
+  border: none;
 }
 
+#budget_submit2:hover {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 105px;
+  padding-left: 105px;
+  vertical-align: center;
+  background-color: #312c32;
+  color: white;
+  border: none;
+}
+#wrong_budget {
+  color: #daad86;
+  font-family: 'Lato', sans-serif;
+}
+
+#user_name {
+  margin-bottom: 10px;
+}
 #user_first_name {
   margin-bottom: 10px;
 }
@@ -248,7 +357,38 @@ label.error {
 #user_last_name {
   margin-bottom: 10px;
 }
+#user_name_err {
+  color: #daad86;
+  font-family: 'Lato', sans-serif;
 
+}
+
+#myform_user_name_errorloc {
+  color: #daad86;
+  font-family: 'Lato', sans-serif;
+
+}
+#myform_user_first_name_errorloc {
+  color: #daad86;
+  font-family: 'Lato', sans-serif;
+}
+
+#myform_user_email_errorloc{
+  color: #daad86;
+  font-family: 'Lato', sans-serif;
+}
+#myform_user_password_errorloc {
+  color: #daad86;
+  font-family: 'Lato', sans-serif;
+}
+#myform_user_password_conf_errorloc{
+  color: #daad86;
+  font-family: 'Lato', sans-serif;
+}
+#myform_user_last_name_errorloc{
+  color: #daad86;
+  font-family: 'Lato', sans-serif;
+}
 #user_email {
   margin-bottom: 10px;
 }
@@ -269,4 +409,16 @@ label.error {
     border-radius: 4px;
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+.form-signin-heading {
+  text-align: center;
+  font-size: 30px;
+}
+.app-logo-watermark {
+    opacity: 0.15;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+    margin: 0px;
+    float: none;
+    position: absolute;
+    align-content: left;
 }

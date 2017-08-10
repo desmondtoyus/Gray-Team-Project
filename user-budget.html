@@ -2,39 +2,36 @@
 
 <html lang="en-us">
 
-  <head>
+<meta charset="UTF-8">
+<title>zotzot app</title>
 
-  <meta charset="UTF-8">
-  <title>iTravel App</title>
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- My CSS -->
 
-  <!-- My CSS -->
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
 
-  </head>
+<body>
 
-  <body>
-
-  <!-- User Budget Screen -->
+  <!-- Welcome Screen -->
     <div class="container">
       <div class="row">
-      <div class="col-lg-12 welcome">
+      <div class="col-xs-12 welcome">
+      <br>
+      <br>
 
-      <br>
-      <br>
-    <div id="welcome1"> </div>
   <!-- Background Logo Watermark -->
-        <a class="brand app-logo center-block" style="margin: 0; float: none; text-align:center" href="#">
-        <img alt="" src="assets/images/iTravel-logo.png"></a>
-
-  <!-- Your Budget Header -->        
+      <div class="col-xs-12 welcome brand app-logo-watermark">
+        <img alt="" src="assets/images/zotzot-logo-round_1x.png" style="width: 50%;">
+      </div>
+  <!-- Welcome Header-->
         <div class="col-lg-3 col-md-offset-5">
-        <h3>Your iTravel Budget</h3>
+        <h3 class="text-center">your zotzot budget</h3>
         <br>
 
   <!-- Budget Input -->
@@ -45,18 +42,20 @@
         <br>
 
   <!-- Submit Button -->
-        <button class="btn btn-primary center-block" id="budget_submit" type="submit">Submit</button>
-<!--  -->
+        <button class="btn btn-primary center-block" id="budget_submit2" type="submit">Submit</button>
+        <br>
 
- <div id="locationField">
-      <input id="autocomplete" placeholder="Enter your source City"
-             onFocus="geolocate()" type="text" class="form-control"></input>
-    </div>
-<p>
- <div id="locationField2">
-      <input id="autocomplete2" placeholder="Enter your destination City"
-             onFocus="geolocate()" type="text" class="form-control"></input>
-    </div>
+  <!--  -->
+
+      <div id="locationField">
+          <input id="autocomplete" placeholder="Enter your source City"
+                 onFocus="geolocate()" type="text" class="form-control"></input>
+        </div>
+      <p>
+      <div id="locationField2">
+          <input id="autocomplete2" placeholder="Enter your destination City"
+                 onFocus="geolocate()" type="text" class="form-control"></input>
+        </div>
 
     <!-- this table is not needed -->
     <table id="address">
@@ -99,19 +98,13 @@
     </div>
 
   <script src="assets/javascript/placesearch.js">
-      
+
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbKVlvljaQsfY7tS5Ykhlb7NwNNtFTAU8&libraries=places&callback=initAutocomplete"
         async defer></script>
   <!-- Firebase Reference -->
   <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
 
-  <!-- Moment.js Reference -->
-  <!-- <script src="http://momentjs.com/downloads/moment.js"></script>   -->
-  
-
-
- 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="assets/javascript/app.js"></script>
   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>

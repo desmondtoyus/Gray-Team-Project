@@ -38,7 +38,7 @@
   /*padding-left:20px;*/
   color:#333;
   margin-top: 15px;
-} 
+}
 
 @media only screen and (max-width: 1000px) {
 .search-fields {
@@ -55,7 +55,7 @@
 }
 
 .search-text .btn-search{
-  background-color:#7dabdb;
+  background-color:#98dafc;
   height:45px;
   border:1px solid #FFF;
   font-family:Roboto;
@@ -79,9 +79,9 @@
 }
 
 footer{
-  background-color:#222222;
-  min-height:200px;
-  padding:80px 0 50px 0;
+  background-color:#312c32;
+  min-height:100px;
+  padding:0px 0 50px 0;
 }
 
 footer .menu li a{
@@ -133,7 +133,7 @@ label.error {
 @import url(https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css);
 
 .col-item {
-  border: 1px solid #E1E1E1;
+  border: none;
   background: #FFF;
   margin-bottom:12px;
 }
@@ -177,7 +177,7 @@ label.error {
 .col-item .options-cart-round button {
   border-radius: 50%;
   padding:14px 16px;
-  
+
 }
 .col-item .options-cart-round button .fa {
   font-size:22px;
@@ -482,6 +482,69 @@ label.error {
     font-size: 12px;
     line-height: 20px;
     text-overflow: ellipsis;
-    background: #34495E;
+    background: #98dafc;
+    cursor: pointer;
     color: white;
 }
+
+#divName {
+  margin-bottom: 4px;
+    font-size: 24px;
+    line-height: 1;
+    color: #daad86;
+}
+
+#venuename {
+    overflow: hidden;
+    font-size: 18px;
+    line-height: 20px;
+    color: #312c32;
+
+}
+
+#category-title {
+  color: #daad86;
+}
+
+.results-title {
+  color: #daad86;
+  margin-bottom: 4px;
+  font-size: 24px;
+  line-height: 1;
+  color: #262626;
+  vertical-align: middle;
+}
+
+.results-info {
+   /* overflow: hidden;*/
+    font-size: 12px;
+    line-height: 20px;
+    color: #737373;
+    border: none;
+}
+.constraint{
+  max-width: 100%;
+  max-height: 250px;
+}
+.const{
+    max-height: 500px;
+    min-height: 500px;
+}
+.info {
+ border: none;
+ }
+ .thumbnail2{
+  margin:15px;
+  max-width: 30%;
+ }
+
+ #search_button {
+  background-color: #98dafc;
+  color: #312c32;
+  border: none;
+ }
+  #search_button:hover {
+  background-color: #312c32;
+  color: white;
+  border: none;
+ }
