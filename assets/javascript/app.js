@@ -144,39 +144,7 @@ else{
 
  // }
 
-function registerUser(){
-     database.ref("/users/").once("value", function(snapshot){
-       if(snapshot.child(userName).exists())
-         {
-         $("#status").html("This User Name already exists, Please Log In");
 
-         }
-         else
-     {
-      database.ref("/users/"+userName).set({
-        userName: userName,
-        firstName: firstName,
-        lastName:lastName,
-        email:email,
-        password:password
-
-      })
-      sessionStorage.setItem("userName", userName);
-      sessionStorage.setItem("firstName", firstName);
-      sessionStorage.setItem("lastName", lastName);
-
-      $("#user_name").empty();
-      $("#user_first_name").empty();
-      $("#user_last_name").empty();
-      $("#user_email").empty();
-        $("#user_password").empty();
-      //proceed to use budget on success
-
-     window.location.href = "user-input.html";
-
-     }
-     })
-}
 $("#budget_submit").on("click", function(){
 var budget = $("#budget").val().trim();
 
@@ -268,7 +236,7 @@ var guest=$("#guest").val().trim();
    $("#guest_div").hide();
    // time for the api query
   
-  window.location.href = "results2.html";
+  window.location.href = "category.html";
 
   }
 
@@ -279,7 +247,7 @@ var guest=$("#guest").val().trim();
 
 
 $("#user_login").on("click", function(){
-event.preventDefault();
+//event.preventDefault();
 var user =$("#user_name").val().trim();
 var password =$("#user_password").val().trim();
 if(user=="" || password==""){
@@ -319,27 +287,50 @@ else
 
 })
 
-function eventAPI2()
+$(".desc").on("click", function(){
+var category=$(this).text();
+//alert(catChoice);
+  sessionStorage.setItem('category', category);
+
+//calculate the number of the visiting days based on the given dates
+    // visitDays()
+     window.location.href = "results2.html";
+
+})
+
+
+
+});
+
+ function eventAPI()
 {
+  var mysource = sessionStorage.getItem('source');
    var myDestination = sessionStorage.getItem('destination');
    var mystartDate = sessionStorage.getItem('startDate');
    var myendDate = sessionStorage.getItem('endDate');
    var myBudget = sessionStorage.getItem('budget');
    var guestNo = sessionStorage.getItem('guest');
+  var category = sessionStorage.getItem('category');
 
    myDestinationArr=myDestination.split(',');
-
+   mySourceArr=mysource.split(',');
 
   mystartDate =mystartDate+"T00%3A00%3A00Z";
-   myendDate =myendDate+"T00%3A00%3A00Z";
+   myendDate =myendDate+"T23%3A59%3A59Z";
+
+   sessionStorage.setItem("state", myDestinationArr[1]);
+  sessionStorage.setItem("city", myDestinationArr[0]);
+  sessionStorage.setItem("stateSource", mySourceArr[1]);
+  sessionStorage.setItem("citySource", mySourceArr[0]);
+
 
    console.log("startDate "+mystartDate );
-    console.log("endDate "+mystartDate);
+    console.log("endDate "+myendDate);
      console.log("state " +myDestinationArr[1]);
      console.log("city " +myDestinationArr[0]);
   
     //var search = 'los+angeles';//$("#search").val().trim();
-    var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0&endDateTime="+myendDate +"&startDateTime="+mystartDate +"&state="+myDestinationArr[1]+"&classificationName=rock&prices=0,1500&city="+myDestinationArr[0];
+    var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0&endDateTime="+myendDate +"&startDateTime="+mystartDate +"&state="+myDestinationArr[1]+"&classificationName="+category+"&prices=0,1500&city="+myDestinationArr[0];
 
     $.ajax({
       url:queryURL,
@@ -352,8 +343,8 @@ function eventAPI2()
     for (var i =0; i < total.length; i++) {
       if(i===0){
       var resultHolder1 =$("<div>");
-      resultHolder1.addClass("col-md-8");
-      resultHolder1.html('<article class="col-item results_item"><div class="photo results_photo"><a href='+total[i].url+'> <img src='+total[i].images[1].url+' class="img-responsive constraint" alt="Product Image"/> </a></div><div class="info"><div class="row"><div class="price-details col-md-6"><div id="divName"> '+total[i].name+'</div><div id="divDate"> '+total[i].dates.start.localDate+'</div><div id="divGenre"> '+total[i].dates.start.localTime+' </div><div id="venuename">'+total[i].dates.timezone+'</div><div id="divAddr">'+total[i].classifications[0].segment.name+'</div><div> '+total[i].classifications[0].genre.name+'</div><div> '+total[i]._embedded.venues[0].name+'</div><div>'+total[i]._embedded.venues[0].address.line1+'</div><div>'+total[i]._embedded.venues[0].city.name+' '+total[i]._embedded.venues[0].state.name+' '+total[i]._embedded.venues[0].postalCode+'</div><div>'+total[i]._embedded.venues[0].country.name+'</div></div></div></div></article>');
+      resultHolder1.addClass("col-md-8 thumbnail");
+      resultHolder1.html('<article class="col-item results_item"><div class="photo results_photo"><a href='+total[i].url+'> <img src='+total[i].images[3].url+' class="img-responsive constraint" alt="Product Image"/> </a></div><div class="info"><div class="row"><div class="price-details col-md-6"><div id="divName" class="results-title">'+total[i].name+'</div><div id="divDate" class="results-info"> '+total[i].dates.start.localDate+'</div><div id="divGenre" class="results-info"> '+total[i].dates.start.localTime+' </div><div id="divAddr" class="results-info">'+total[i].classifications[0].segment.name+'</div><div class="results-info">'+total[i].classifications[0].genre.name+'</div><div class="results-info"> '+total[i]._embedded.venues[0].name+'</div><div class="results-info">'+total[i]._embedded.venues[0].address.line1+'</div><div class="results-info">'+total[i]._embedded.venues[0].city.name+' '+total[i]._embedded.venues[0].state.name+' '+total[i]._embedded.venues[0].postalCode+'</div><div class="results-info">'+total[i]._embedded.venues[0].country.name+'</div></div></div></div> <a class="btn btn-primary center-block" id="hotel" href="hotel2.html">View Hotels</a></article>');
       $("#preffered_result").append(resultHolder1);
 
       }
@@ -361,8 +352,8 @@ function eventAPI2()
       {
 
       var resultHolder =$("<div>");
-      resultHolder.addClass("col-md-4 const");
-      resultHolder.html('<article class="col-item results_item"><div class="photo results_photo"><a href='+total[i].url+'> <img src='+total[i].images[1].url+' class="img-responsive constraint" alt="Product Image"/> </a></div><div class="info"><div class="row"><div class="price-details col-md-6"><div id="divName"> '+total[i].name+'</div><div id="divDate"> '+total[i].dates.start.localDate+'</div><div id="divGenre"> '+total[i].dates.start.localTime+' </div><div id="venuename">'+total[i].dates.timezone+'</div><div id="divAddr">'+total[i].classifications[0].segment.name+'</div><div> '+total[i].classifications[0].genre.name+'</div><div> '+total[i]._embedded.venues[0].name+'</div><div>'+total[i]._embedded.venues[0].address.line1+'</div><div>'+total[i]._embedded.venues[0].city.name+' '+total[i]._embedded.venues[0].state.name+' '+total[i]._embedded.venues[0].postalCode+'</div><div>'+total[i]._embedded.venues[0].country.name+'</div></div></div></div></article>');
+      resultHolder.addClass("col-md-4 const thumbnail thumbnail2");
+      resultHolder.html('<article class="col-item results_item"><div class="photo results_photo"><a href='+total[i].url+'> <img src='+total[i].images[1].url+' class="img-responsive constraint" alt="Product Image"/> </a></div><div class="info"><div class="row"><div class="price-details col-md-6"><div id="divName" class="results-title">'+total[i].name+'</div><div id="divDate" class="results-info"> '+total[i].dates.start.localDate+'</div><div id="divGenre" class="results-info"> '+total[i].dates.start.localTime+' </div><div id="divAddr" class="results-info">'+total[i].classifications[0].segment.name+'</div><div class="results-info">'+total[i].classifications[0].genre.name+'</div><div class="results-info"> '+total[i]._embedded.venues[0].name+'</div><div class="results-info">'+total[i]._embedded.venues[0].address.line1+'</div><div class="results-info">'+total[i]._embedded.venues[0].city.name+' '+total[i]._embedded.venues[0].state.name+' '+total[i]._embedded.venues[0].postalCode+'</div><div class="results-info">'+total[i]._embedded.venues[0].country.name+'</div></div></div></div><a class="btn btn-primary center-block" id="hotel" href="hotel2.html">View Hotels</a></article>');
       $("#result_content").append(resultHolder);
     }
   }
@@ -371,7 +362,47 @@ function eventAPI2()
 
 }
 
-});
+function registerUser(){
+     database.ref("/users/").once("value", function(snapshot){
+       if(snapshot.child(userName).exists())
+         {
+         $("#status").html("This User Name already exists, Please Log In");
+
+         }
+         else
+     {
+      database.ref("/users/"+userName).set({
+        userName: userName,
+        firstName: firstName,
+        lastName:lastName,
+        email:email,
+        password:password
+
+      })
+      sessionStorage.setItem("userName", userName);
+      sessionStorage.setItem("firstName", firstName);
+      sessionStorage.setItem("lastName", lastName);
+
+      $("#user_name").empty();
+      $("#user_first_name").empty();
+      $("#user_last_name").empty();
+      $("#user_email").empty();
+        $("#user_password").empty();
+      //proceed to use budget on success
+
+     window.location.href = "user-input.html";
+
+     }
+     })
+}
+
+function visitDays(){
+  var mystartDate = sessionStorage.getItem('startDate');
+   var myendDate = sessionStorage.getItem('endDate');
+   var dayOfVisit= moment(myendDate).diff(moment(mystartDate), "days");
+console.log('days='+dayOfVisit);
+ sessionStorage.setItem("dayOfVisit", dayOfVisit);
+}
 //to split the date and city array. city is a variable name
  //Arr=city.split(',')
  //T00%3A00%3A00Z

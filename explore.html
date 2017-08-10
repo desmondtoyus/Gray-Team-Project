@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+<meta charset="UTF-8">
+<title>zotzot app</title>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- My CSS -->
+
+<link rel="stylesheet" type="text/css" href="assets/css/style2.css">
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="styleshee√t">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Header -->
+<div class="container">
+<div class="container">
+  <div class="search-text">
+         <div class="row">
+             <div class="header">
+                  <div class="logo col-sm-1 col-xs-12">
+                     <a href=""><img src="assets/images/zotzot-logo-horizontal2_1x.png" style="width: 130px; height: 61px; margin-right: 20px;" ></a>
+                  </div>
+                  <div class="form col-sm-10 col-xs-12">
+                        <div class="user_search col-sm-3 col-xs-12 search-fields">
+                            <input type="text" class="form-control input-search" placeholder="Where">
+                        </div>
+                        <div class="user_destination col-sm-3 col-xs-12 search-fields">
+                            <input type="text" class="form-control input-search" placeholder="When">
+                        </div>
+                        <div class="user_budget col-sm-3 col-xs-12 search-fields">
+                            <div class="input-group" style="height: 45px; margin-top: 15px;">
+                              <span class="input-group-addon">$</span>
+                              <input type="text" value="" class="form-control" style="height: 45px;" aria-label="Amount (to the nearest dollar)" id="budget">
+                            </div>
+                        </div>
+                        <div class="user_search_submit col-sm-3 col-xs-12 search-fields">
+                            <button type="submit" class="form-control btn-search" id="search_button">Search</button>
+                        </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+       </div>
+  </div>
+
+
+  <!-- Results -->
+
+  <div class="row category">
+
+   <div class="container">
+
+     <!-- Category Result 1 -->
+
+     <br><br><br><br>
+        <div class="col-sm-4">
+        <div class="card hovercard how-to-fly" style="background: url(assets/images/somewhere-to-go_0.65x.png); height: 350px;" >
+           <!-- <img src="assets/images/music.png" alt="" style="width: 300px; height: 200px" /> -->
+           <div class="avatar">
+<!-- 
+                <i class="glyphicon glyphicon-music" style="font-size:40px; color:#98dafc; background-color: white; padding: 30px; border-radius:50%; text-align: center; margin-top: 100px;"></i> -->
+           </div>
+           <br>
+           <div class="info">
+              <div class="title" id="" style="color: white;  margin-top: 175px; font-size: 26px">
+                 Go to New York
+              </div>
+           </div>
+        </div>
+        </div>
+
+        <!-- Category Result 2 -->
+
+        <div class="col-sm-4">
+        <div class="card hovercard where-to-stay"  style="background: url(assets/images/somewhere-to-stay_0.65x.png); height: 350px;" >
+           <div class="avatar">
+             <!--  <i class="glyphicon glyphicon-camera" style="font-size:40px; color:#98dafc; background-color: white; padding: 30px; border-radius:50%; text-align: center; margin-top: 100px; opacity: 0.5;"></i> -->
+           </div>
+           <br>
+           <div class="info">
+              <div class="title" id="" style="color: white; margin-top: 175px; font-size: 26px">
+                 Stay in New York
+              </div>
+           </div>
+        </div>
+        </div>
+
+        <!-- Category Result 3 -->
+
+        <div class="col-sm-4">
+        <div class="card hovercard what-to-do"  style="background: url(assets/images/something-to-do_0.65x.png); height: 350px;" >
+           <!-- <img src="assets/images/film.png" alt="" style="width: 300px; height: 200px" /> -->
+           <div class="avatar">
+              <!-- <i class="glyphicon glyphicon-facetime-video" style="font-size:40px; color:#98dafc; background-color: white; padding: 30px; border-radius:50%; text-align: center; margin-top: 100px;"></i> -->
+           </div>
+           <br>
+           <div class="info">
+              <div class="title" id="" style="color: white; margin-top: 175px; font-size: 26px">
+                 Enjoy New York
+              </div>
+           </div>
+        </div>
+        </div>
+
+    </div>
+
+
+  </div>
+
+<br><br><br><br><br><br>
+
+
+    <!-- Footer -->
+
+    <footer>
+       <div class="container">
+              <div class="row text-center">
+                     <ul class="menu list-inline">
+                     <br><br><br>
+                     <li>
+                        <a href="#">ZotZot Home</a>
+                      </li>
+
+                      <li>
+                         <a href="#">ZotZot & Go</a>
+                      </li>
+
+                      <li>
+                        <a href="#">ZotZot & Stay</a>
+                      </li>
+
+                      <li>
+                        <a href="#">ZotZot & Enjoy</a>
+                      </li>
+                      </ul>
+              </div>
+        </div>
+    </footer>
+
+
+    <div class="copyright">
+     <div class="container">
+
+         <div class="row text-center">
+          <p>Copyright © 2017 All rights reserved</p>
+         </div>
+
+     </div>
+    </div>
+
+     
+     
+    <!-- End -->
+    
+
+
+
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
+
+    <!-- Moment.js Reference -->
+    <!-- <script src="http://momentjs.com/downloads/moment.js"></script>   -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/javascript/app.js"></script> 
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+</script>
+</body>
+</html>

@@ -1,33 +1,113 @@
-/*html {
-  background: url('../images/game_of_thronesbk.png') no-repeat center center fixed;
-  background-repeat: none;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}*/
 
-/*body {
-    background-color: transparent;
+
+/*CSS for Results Header
+=========================================================*/
+
+.logo {
+    margin-left: 20px;
+    padding-right: 0px;
+}
+@media only screen and (max-width: 765px) {
+.logo {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+}
+.search-text{
+  background-color: white;
+  width: 100%;
+  border: 0;
+  /*border-bottom: 1px solid #a9a9a9;*/
+  /*height: 77px;*/
+  position: fixed;
+  padding-bottom: 0px;
+  margin: 0;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  box-shadow: 2px 2px 2px #eeeeee;
 }
 
-
-h2 {
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-bottom: 20px;
-    color: #782918;
-}*/
-@import url(https://fonts.googleapis.com/css?family=Lato);
-
-body h1 h2 h3{
-   font-family: 'Lato', sans-serif;
-   color: #312c32;
+#input_group_addon{
+  max-height: 45px;
+  margin-top: 15px;
 }
-/*.text-center {
-  font-size: 30px;
-  margin-top: 150px;
-}*/
+.search-text .input-search {
+  height:45px;
+  /*padding-left:20px;*/
+  color:#333;
+  margin-top: 15px;
+} 
+
+@media only screen and (max-width: 1000px) {
+.search-fields {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+}
+
+@media only screen and (max-width: 740px) {
+.search-fields {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+}
+
+.search-text .btn-search{
+  background-color:#7dabdb;
+  height:45px;
+  border:1px solid #FFF;
+  font-family:Roboto;
+  margin-top: 15px;
+  color:#FFF;
+  padding:11px 20px 11px 20px;
+}
+
+.search-text  .btn-search:hover{
+  background-color:#FFF;
+  color:#7dabdb;
+}
+
+.copyright{
+    background-color:#f0f0f0;
+}
+
+.copyright p{
+  font-family:Roboto;
+  padding:15px 0 10px 0;
+}
+
+footer{
+  background-color:#222222;
+  min-height:200px;
+  padding:80px 0 50px 0;
+}
+
+footer .menu li a{
+  font-family:Roboto;
+  color:#b1aca1;
+  padding:10px;
+  text-decoration:none;
+}
+
+footer .menu li a:hover{
+  color:#7dabdb;
+}
+
+.fa.fa-facebook , .fa.fa-dropbox, .fa.fa-flickr , .fa.fa-github , .fa.fa-linkedin ,.fa,fa-tumblr ,.fa.fa-google-plus , .fa.fa-tumblr {
+  color:#b1aca1;
+  font-size:20px;
+  padding:10px;
+  margin-bottom:50px;
+}
+
+.fa.fa-facebook:hover , .fa.fa-dropbox:hover , .fa.fa-flickr:hover  , .fa.fa-github:hover  , .fa.fa-linkedin:hover  ,.fa,fa-tumblr:hover  ,.fa.fa-google-plus:hover  , .fa.fa-tumblr:hover  {
+  color:#6794c2;
+}
+
+/*CSS for Results
+=========================================================*/
 
 /* font Awesome http://fontawesome.io*/
 @import url('assets/css/bootstrap.min.css');
@@ -210,34 +290,13 @@ label.error {
   width: 200px;
   height: 200px;
 }
-.app-logo-watermark {
-    opacity: 0.15;
-    filter: alpha(opacity=50); /* For IE8 and earlier */
-    margin: 0px;
-    float: none;
-    position: absolute;
-    align-content: left;
-}
+
 #login {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 60px;
   padding-left: 60px;
   vertical-align: center;
-  background-color: #98dafc;
-  color: #312c32;
-  border: none;
-}
-
-#login:hover {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 60px;
-  padding-left: 60px;
-  vertical-align: center;
-  background-color: #312c32;
-  color: white;
-  border: none;
 }
 
 #sign_up {
@@ -246,40 +305,14 @@ label.error {
   padding-right: 60px;
   padding-left: 60px;
   vertical-align: center;
-  background-color: #98dafc;
-  color: #312c32;
-  border: none;
-}
-
-#sign_up:hover {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 60px;
-  padding-left: 60px;
-  vertical-align: center;
-  background-color: #312c32;
-  color: white;
-  border: none;
 }
 
 #facebook_login {
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-right: 50px;
-  padding-left: 50px;
-  background-color: #98dafc;
-  color: #312c32;
-  border: none;
-}
-
-#facebook_login:hover {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 50px;
-  padding-left: 50px;
-  background-color: #312c32;
-  color: white;
-  border: none;
+  padding-right: 33px;
+  padding-left: 33px;
+  vertical-align: center;
 }
 
 #user_login {
@@ -288,120 +321,16 @@ label.error {
   padding-right: 60px;
   padding-left: 60px;
   vertical-align: center;
-  background-color: #98dafc;
-  color: #312c32;
-  border: none;
-}
-
-#user_login:hover {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 60px;
-  padding-left: 60px;
-  vertical-align: center;
-  background-color: #312c32;
-  color: white;
-  border: none;
 }
 
 #budget_submit {
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-right: 112px;
-  padding-left: 112px;
-  vertical-align: center;
-  background-color: #98dafc;
-  color: #312c32;
-  border: none;
-}
-
-#budget_submit:hover {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 112px;
-  padding-left: 112px;
-  vertical-align: center;
-  background-color: #312c32;
-  color: white;
-  border: none;
-}
-.css_submit {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 112px;
-  padding-left: 112px;
-  vertical-align: center;
-  background-color: #98dafc;
-  color: #312c32;
-  border: none;
-}
-
-.css_submit:hover {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 112px;
-  padding-left: 112px;
-  vertical-align: center;
-  background-color: #312c32;
-  color: white;
-  border: none;
-}
-#budget_submit2 {
-  padding-top: 10px;
-  padding-bottom: 10px;
   padding-right: 105px;
   padding-left: 105px;
   vertical-align: center;
-  background-color: #98dafc;
-  color: #312c32;
-  border: none;
 }
 
-#budget_submit2:hover {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 105px;
-  padding-left: 105px;
-  vertical-align: center;
-  background-color: #312c32;
-  color: white;
-  border: none;
-}
-
-#flight_button {
-  width: 70%;
-  margin-left: 15%;
-  margin-right: 12%;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 30px;
-  padding-left: 30px;
-  background-color: #98dafc;
-  color: #312c32;
-  border: none;
-}
-
-#flight_button:hover {
-  width: 70%;
-  margin-left: 15%;
-  margin-right: 12%;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 60px;
-  padding-left: 60px;
-  vertical-align: center;
-  background-color: #312c32;
-  color: white;
-  border: none;
-}
-#wrong_budget {
-  color: #daad86;
-  font-family: 'Lato', sans-serif;
-}
-
-#user_name {
-  margin-bottom: 10px;
-}
 #user_first_name {
   margin-bottom: 10px;
 }
@@ -409,38 +338,7 @@ label.error {
 #user_last_name {
   margin-bottom: 10px;
 }
-#user_name_err {
-  color: #daad86;
-  font-family: 'Lato', sans-serif;
 
-}
-
-#myform_user_name_errorloc {
-  color: #daad86;
-  font-family: 'Lato', sans-serif;
-
-}
-#myform_user_first_name_errorloc {
-  color: #daad86;
-  font-family: 'Lato', sans-serif;
-}
-
-#myform_user_email_errorloc{
-  color: #daad86;
-  font-family: 'Lato', sans-serif;
-}
-#myform_user_password_errorloc {
-  color: #daad86;
-  font-family: 'Lato', sans-serif;
-}
-#myform_user_password_conf_errorloc{
-  color: #daad86;
-  font-family: 'Lato', sans-serif;
-}
-#myform_user_last_name_errorloc{
-  color: #daad86;
-  font-family: 'Lato', sans-serif;
-}
 #user_email {
   margin-bottom: 10px;
 }
@@ -448,9 +346,22 @@ label.error {
 #user_password {
   margin-bottom: 10px;
 }
+
+.results {
+  position: relative;
+  margin-top: 100px;
+}
+@media only screen and (max-width: 500px) {
+
+.results {
+  position: relative;
+  margin-top: 300px;
+}
+
+}
+
 #start_date, #end_date {
     height: 34px;
-    width: 100%;
     padding: 6px 12px;
     font-size: 14px;
     line-height: 1.42857143;
@@ -461,4 +372,12 @@ label.error {
     border-radius: 4px;
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+.constraint{
+  max-width: 100%;
+  max-height: 250px;
+}
+.const{
+    max-height: 500px;
+    min-height: 500px;
 }

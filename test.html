@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+	<title></title>
+
+	<!-- Bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- My CSS -->
+
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+<body>
+
+<form onsubmit="return checkForm();" ----- >
+<form role="form" method="post">
+  <div class="box box-primary">
+    <div class="box-header">
+	  <h2 class="page-header"><i class="fa fa-lock"></i>  Change Password</h2>
+	  <div class="pull-right">
+	    <button type="button" name="Submit" value="Save" class="btn btn-danger"><i class="livicon" data-n="pen" data-s="16" data-c="#fff" data-hc="0" ></i> Save</button>
+		 <button type="reset" name="Reset" value="Clear" class="btn btn-primary"><i class="livicon" data-n="trash" data-s="16" data-c="#fff" data-hc="0"></i> Clear</button>
+	   </div>
+	</div><!-- /.box-header -->
+	
+  <div class="box-body">
+    <div class="row">
+	  <div class="col-xs-12 col-sm-3 col-md-3">
+        <label>Old Password</label>
+	  </div>
+	  <div class="col-xs-12 col-sm-3 col-md-3">
+	    <div class="input-group">
+		  <div class="input-group-addon">
+		    <i class="fa fa-lock"></i>
+		  </div>
+    	  <input class="form-control" id="oldPassword" name="oldPassword" value="" placeholder="Enter the Old Password" type="password">
+    	</div>
+	  </div><!-- /.input group -->
+	</div>
+	
+	<br/>
+    
+    <div class="row">
+	  <div class="col-xs-12 col-sm-3 col-md-3">
+	    <label>New Password</label>
+	  </div>
+	  <div class="col-xs-12 col-sm-3 col-md-3">
+	    <div class="input-group">
+		  <div class="input-group-addon">
+		    <i class="fa fa-lock"></i>
+		  </div>
+		    <input class="form-control" id="newPassword" name="newPassword" value="" placeholder="Enter the New Password" type="password">
+		</div>
+	  </div><!-- /.input group -->
+	</div>
+
+<!-- Firebase Reference -->
+<script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
+
+<!-- Moment.js Reference -->
+<!-- <script src="http://momentjs.com/downloads/moment.js"></script>   -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="assets/javascript/test.js"></script>
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<!-- load jQuery UI CSS theme -->
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+
+</body>
+</html>

@@ -2,18 +2,6 @@
 
 /*CSS for Results Header
 =========================================================*/
-@import url(https://fonts.googleapis.com/css?family=Lato);
-
-body h1 h2 h3 {
-   font-family: 'Lato', sans-serif;
-   color: #312c32;
-}
-
-@media only screen and (max-width: 767px) {
-.category {
-  margin-top: 250px;
-}
-}
 
 .logo {
     margin-left: 20px;
@@ -67,7 +55,7 @@ body h1 h2 h3 {
 }
 
 .search-text .btn-search{
-  background-color:#98dafc;
+  background-color:#7dabdb;
   height:45px;
   border:1px solid #FFF;
   font-family:Roboto;
@@ -91,9 +79,9 @@ body h1 h2 h3 {
 }
 
 footer{
-  background-color:#312c32;
-  min-height:100px;
-  padding:0px 0 50px 0;
+  background-color:#222222;
+  min-height:200px;
+  padding:80px 0 50px 0;
 }
 
 footer .menu li a{
@@ -145,7 +133,7 @@ label.error {
 @import url(https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css);
 
 .col-item {
-  border: none;
+  border: 1px solid #E1E1E1;
   background: #FFF;
   margin-bottom:12px;
 }
@@ -303,7 +291,7 @@ label.error {
   height: 200px;
 }
 
-/*#login {
+#login {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 60px;
@@ -358,7 +346,7 @@ label.error {
 #user_password {
   margin-bottom: 10px;
 }
-*/
+
 .results {
   position: relative;
   margin-top: 100px;
@@ -494,55 +482,8 @@ label.error {
     font-size: 12px;
     line-height: 20px;
     text-overflow: ellipsis;
-    background: #98dafc;
-    cursor: pointer;
+    background: #34495E;
     color: white;
-    border-radius: 5px;
-}
-
-.desc:active{
-    font-size: 12px;
-    line-height: 20px;
-    text-overflow: ellipsis;
-    background: #312c32;
-    cursor: pointer;
-    color: white;
-}
-
-#divName {
-  margin-bottom: 4px;
-    font-size: 24px;
-    line-height: 1;
-    color: #daad86;
-}
-
-#venuename {
-    overflow: hidden;
-    font-size: 18px;
-    line-height: 20px;
-    color: #312c32;
-
-}
-
-#category-title {
-  color: #daad86;
-}
-
-.results-title {
-  color: #daad86;
-  margin-bottom: 4px;
-  font-size: 24px;
-  line-height: 1;
-  color: #262626;
-  vertical-align: middle;
-}
-
-.results-info {
-   /* overflow: hidden;*/
-    font-size: 12px;
-    line-height: 20px;
-    color: #737373;
-    border: none;
 }
 .constraint{
   max-width: 100%;
@@ -551,64 +492,4 @@ label.error {
 .const{
     max-height: 500px;
     min-height: 500px;
-}
-.info {
- border: none;
- }
- .thumbnail2{
-  margin:15px;
-  max-width: 30%;
- }
-
- .desc-hotel {
-  overflow: hidden;
-  font-size: 12px;
-  line-height: 20px;
-  color: #737373;
-  text-overflow: ellipsis;
-}
-.how-to-fly, .where-to-stay, .what-to-do {
-  cursor: pointer;
-}
-
-.how-to-fly:hover, .where-to-stay:hover, .what-to-do:hover {
-  -webkit-filter: grayscale(100%);
-}
-.search-text .btn-search:hover {
-    background-color: #312c32 ;
-    color: white;
-    border: none;
-    height: 45px;
-    font-family: Roboto;
-    margin-top: 15px;
-    padding: 11px 20px 11px 20px;
-}
-
-.search-text .btn-search {
-    background-color: #98dafc ;
-    color: #312c32 ;
-    border: none;
-    height: 45px;
-    font-family: Roboto;
-    margin-top: 15px;
-    padding: 11px 20px 11px 20px;
-}
-#hotel:hover {
-    background-color: #312c32 ;
-    color: white;
-    border: none;
-    height: 45px;
-    font-family: Roboto;
-    margin-top: 15px;
-    padding: 11px 20px 11px 20px;
-}
-
-#hotel {
-    background-color: #98dafc ;
-    color: #312c32 ;
-    border: none;
-    height: 45px;
-    font-family: Roboto;
-    margin-top: 15px;
-    padding: 11px 20px 11px 20px;
 }

@@ -18,6 +18,7 @@ body h1 h2 h3 {
 .logo {
     margin-left: 20px;
     padding-right: 0px;
+    
 }
 @media only screen and (max-width: 765px) {
 .logo {
@@ -50,7 +51,7 @@ body h1 h2 h3 {
   /*padding-left:20px;*/
   color:#333;
   margin-top: 15px;
-} 
+}
 
 @media only screen and (max-width: 1000px) {
 .search-fields {
@@ -189,7 +190,7 @@ label.error {
 .col-item .options-cart-round button {
   border-radius: 50%;
   padding:14px 16px;
-  
+
 }
 .col-item .options-cart-round button .fa {
   font-size:22px;
@@ -303,7 +304,7 @@ label.error {
   height: 200px;
 }
 
-/*#login {
+#login {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 60px;
@@ -358,7 +359,7 @@ label.error {
 #user_password {
   margin-bottom: 10px;
 }
-*/
+
 .results {
   position: relative;
   margin-top: 100px;
@@ -560,55 +561,13 @@ label.error {
   max-width: 30%;
  }
 
- .desc-hotel {
-  overflow: hidden;
-  font-size: 12px;
-  line-height: 20px;
-  color: #737373;
-  text-overflow: ellipsis;
-}
-.how-to-fly, .where-to-stay, .what-to-do {
-  cursor: pointer;
-}
-
-.how-to-fly:hover, .where-to-stay:hover, .what-to-do:hover {
-  -webkit-filter: grayscale(100%);
-}
-.search-text .btn-search:hover {
-    background-color: #312c32 ;
-    color: white;
-    border: none;
-    height: 45px;
-    font-family: Roboto;
-    margin-top: 15px;
-    padding: 11px 20px 11px 20px;
-}
-
-.search-text .btn-search {
-    background-color: #98dafc ;
-    color: #312c32 ;
-    border: none;
-    height: 45px;
-    font-family: Roboto;
-    margin-top: 15px;
-    padding: 11px 20px 11px 20px;
-}
-#hotel:hover {
-    background-color: #312c32 ;
-    color: white;
-    border: none;
-    height: 45px;
-    font-family: Roboto;
-    margin-top: 15px;
-    padding: 11px 20px 11px 20px;
-}
-
-#hotel {
-    background-color: #98dafc ;
-    color: #312c32 ;
-    border: none;
-    height: 45px;
-    font-family: Roboto;
-    margin-top: 15px;
-    padding: 11px 20px 11px 20px;
-}
+ #search_button {
+  background-color: #98dafc;
+  color: #312c32;
+  border: none;
+ }
+  #search_button:hover {
+  background-color: #312c32;
+  color: white;
+  border: none;
+ }

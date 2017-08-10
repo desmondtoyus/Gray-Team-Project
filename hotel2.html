@@ -5,7 +5,7 @@
   <head>
 
   <meta charset="UTF-8">
-  <title>iTravel App</title>
+  <title>Tripee App</title>
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -30,9 +30,9 @@
          <div class="row">
          <div class="header">
          <div class="logo col-sm-1 col-xs-12">
-           <a href=""><img src="assets/images/zotzot-logo-horizontal2_1x.png" style="width: 130px; height: 61px; margin-right: 20px" ></a>
+           <a href="https://placeholder.com"><img src="http://via.placeholder.com/70x70"></a>
          </div>
-            <div class="form col-sm-10 col-xs-12">
+           <div class="form col-sm-10 col-xs-12">
                 <div class="user_search col-sm-3 col-xs-12 search-fields">
                     <input type="text" class="form-control input-search" placeholder="Where">
                 </div>
@@ -55,40 +55,12 @@
           </div>         
        </div>     
   </div>
-    
+  
+  <div class="row hotel-category">
+   
 
-  <!-- Results -->
-
-  <div class="row results">
-
-   <!-- Results Text -->
-        <div class="col-sm-4">
-        <br>
-            <h2>New York City – Results Page</h2>
-            <p>New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean. At its core is Manhattan, a densely populated borough that’s among the world’s major commercial, financial and cultural centers. Its iconic sites include skyscrapers such as the Empire State Building and sprawling Central Park. Broadway theater is staged in neon-lit Times Square.</p>
-        </div>
-      
-
-
-        <!-- Top Result -->
-        <br>
-        <div id="preffered_result">
-          
-        </div>
-<!--   =========================================================================================================
-  First Result
-  ========================================================================================================= -->
-        <div id="result_content">
-
-       
-
-
-      </div>
- 
   </div>
-  </div>
-
-     
+   
 <br><br><br><br><br><br> 
      
      
@@ -168,22 +140,25 @@
 
 
     <!-- Firebase Reference -->
-    <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
+  
 
     <!-- Moment.js Reference -->
     <!-- <script src="http://momentjs.com/downloads/moment.js"></script>   -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!--   <script type="text/javascript" src="assets/javascript/app.js"></script>  -->
+ 
   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-<script type="text/javascript" src="assets/javascript/app.js"></script>
-<script type="text/javascript">
 
-$(document).ready(function() {
-    eventAPI();
-    visitDays();
-});
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="assets/javascript/returnResult.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+  // body...
+destinationLat();
+
+})
 </script>
 </body>
 </html>
