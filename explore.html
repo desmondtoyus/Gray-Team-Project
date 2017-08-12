@@ -66,6 +66,7 @@
 
      <br><br><br><br>
         <div class="col-sm-4">
+        <a href="flights.html">
         <div class="card hovercard how-to-fly" style="background: url(assets/images/somewhere-to-go_0.65x.png); height: 350px;" >
            <!-- <img src="assets/images/music.png" alt="" style="width: 300px; height: 200px" /> -->
            <div class="avatar">
@@ -74,52 +75,199 @@
            </div>
            <br>
            <div class="info">
-              <div class="title" id="" style="color: white;  margin-top: 175px; font-size: 26px">
-                 Go to New York
+              <div class="title" id="goto" style="color: white;  margin-top: 175px; font-size: 26px">
+                 
               </div>
            </div>
         </div>
+        </a>
         </div>
 
         <!-- Category Result 2 -->
 
         <div class="col-sm-4">
+         <a href="hotel2.html">
         <div class="card hovercard where-to-stay"  style="background: url(assets/images/somewhere-to-stay_0.65x.png); height: 350px;" >
            <div class="avatar">
              <!--  <i class="glyphicon glyphicon-camera" style="font-size:40px; color:#98dafc; background-color: white; padding: 30px; border-radius:50%; text-align: center; margin-top: 100px; opacity: 0.5;"></i> -->
            </div>
            <br>
            <div class="info">
-              <div class="title" id="" style="color: white; margin-top: 175px; font-size: 26px">
-                 Stay in New York
+              <div class="title" id="stayin" style="color: white; margin-top: 175px; font-size: 26px">
+               
               </div>
            </div>
         </div>
+        </a>
         </div>
 
         <!-- Category Result 3 -->
 
         <div class="col-sm-4">
+        <a href="category.html">
         <div class="card hovercard what-to-do"  style="background: url(assets/images/something-to-do_0.65x.png); height: 350px;" >
            <!-- <img src="assets/images/film.png" alt="" style="width: 300px; height: 200px" /> -->
            <div class="avatar">
               <!-- <i class="glyphicon glyphicon-facetime-video" style="font-size:40px; color:#98dafc; background-color: white; padding: 30px; border-radius:50%; text-align: center; margin-top: 100px;"></i> -->
            </div>
            <br>
+
            <div class="info">
-              <div class="title" id="" style="color: white; margin-top: 175px; font-size: 26px">
-                 Enjoy New York
+              <div class="title" id="enjoy" style="color: white; margin-top: 175px; font-size: 26px">
+    
               </div>
            </div>
         </div>
+        </a>
         </div>
 
-    </div>
+<!--  User Choices Results -->     
+
+<div class="row">
+        <div class="panel panel-default">
+          
+          <div class="panel-body">
+            
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"  id="total-budget" style="height: 40px; padding-top: 10px;">Your Total Budget</h3>
+          </div>
+          <div class="panel-body">
+
+          <!--  Result for Event  -->  
+
+           <div class="container">
+           <div class="col-sm-6"> 
+            <h3>Your Selected Event</h3> 
+
+            <br>
+              <a href="results2.html"><button type="submit" class="form-control btn-search" id="change_event">Change Event</button>
+            </div></a> 
+            <div class="col-sm-12">
+            <table class="table table-hover">
+            <hr>
+
+              <thead>
+                <tr>
+                  <th>Event Name</th>
+                  <th>Event Date & Time</th>
+                  <th>Event Category</th>
+                  <th>Event Place</th>
+                  <th>Event Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td id="event-name"></td>
+                  <td id="event-date-time"></td>
+                  <td id="event-category"></td>
+                  <td id="event-place"></td>
+                  <td id="event-price"></td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
+          </div>
+        </div>
+
+        <!--  Result for Hotel  -->     
+
+        <div class="panel panel-default">
+         
+          <div class="panel-body">
+           <div class="container">
+           <div class="col-sm-6"> 
+            <h3>Your Selected Hotel</h3> 
+
+            <br>
+              <a href="hotel2.html"><button type="submit" class="form-control btn-search" id="change_hotel">Change Hotel</button>
+            </div></a> 
+            <div class="col-sm-12">
+            <table class="table table-hover">
+            <hr>
+
+              <thead>
+                <tr>
+                  <th>Hotel Name</th>
+                  <th>Hotel Location</th>
+                  <th>Daily Rate</th>
+                  <th>Hotel Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td id="hotel-name"></td>
+                  <td id="hotel-location"></td>
+                  <td id="hotel-price"></td>
+                  <td id="hotel-rate"></td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
+          </div>
+          </div>
+
+          <!--  Result for Flight  -->     
+
+        <div class="panel panel-default">
+         
+          <div class="panel-body">
+           <div class="container">
+           <div class="col-sm-6"> 
+            <h3>Your Selected Flight</h3> 
+
+            <br>
+              <a href="flights.html"><button type="submit" class="form-control btn-search" id="change_flight">Change Flight</button></a>
+            </div> 
+            <div class="col-sm-12">
+            <table class="table table-hover">
+            <hr>
+
+              <thead>
+                <tr>
+                  <th>Flight Name</th>
+                  <th>Departure Date</th>
+                  <th>Return Date</th>
+                  <th>Depart From</th>
+                  <th>Arrive At</th>
+                  <th>Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td id="flight-name"></td>
+                  <td id="departure-date"></td>
+                  <td id="return-date"></td>
+                  <td id="depart-from"></td>
+                  <td id="arrive-at"></td>
+                  <td id="flight-price"></td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
+          </div>
 
 
-  </div>
 
+
+
+
+</div>
+
+</div>
+
+
+</div>
+</div>
 <br><br><br><br><br><br>
+
+
 
 
     <!-- Footer -->
@@ -174,11 +322,18 @@
     <!-- <script src="http://momentjs.com/downloads/moment.js"></script>   -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="assets/javascript/app.js"></script> 
+  <script type="text/javascript" src="assets/javascript/returnResult.js"></script> 
+    <script type="text/javascript" src="assets/javascript/explorerJS.js"></script>  
   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 
 <script type="text/javascript">
+backTrack();  
+showEvent();
+showHotel();
+showFlight();
+mytotalPrice();
 </script>
 </body>
 </html>

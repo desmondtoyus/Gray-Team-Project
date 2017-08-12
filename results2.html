@@ -60,8 +60,8 @@
   <!-- Results -->
 
   <div class="row results">
-
-   <!-- Results Text -->
+<div id="event_selected"> </div>
+   <!-- Results Text --><button  class="form-control btn-search" id="continue">Continue</button>
         <div class="col-sm-4">
         <br>
             <h2>New York City – Results Page</h2>
@@ -92,74 +92,44 @@
 <br><br><br><br><br><br> 
      
      
-    <!-- Footer 3 -->
-    
+    <!-- Footer -->
+
     <footer>
        <div class="container">
-           
-               <div class="row text-center">
-                  <ul class="list-inline">
-                                 
-                                   <li>
-                                        <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
-                                   </li>
-                                   
-                                   <li>
-                                        <a href="#"><i class="fa fa-dropbox fa-2x"></i></a>
-                                   </li>
-                                   
-                                   <li>
-                                        <a href="#"><i class="fa fa-flickr fa-2x"></i></a> 
-                                   </li>
-                                  
-                                   <li>
-                                        <a href="#"><i class="fa fa-github fa-2x"></i></a>
-                                   </li>
-                                    
-                                   <li>
-                                        <a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
-                                   </li>
-                                   
-                                   <li>
-                                        <a href="#"><i class="fa fa-tumblr fa-2x"></i></a>
-                                   </li>
-                                   
-                                  
-                         </ul>
-                </div>
-                 
-                <div class="row text-center">   
-                      <ul class="menu list-inline">
-                                 
-                             <li>
-                                <a href="#">Home</a>
-                              </li>
-                                   
-                              <li>
-                                 <a href="#">Placeholder</a>
-                              </li>
-                                   
-                              <li>
-                                <a href="#">Placeholder</a>
-                              </li>
-                   
-                     </ul>
-                 </div>
-               
-           
-        </div> 
+              <div class="row text-center">
+                     <ul class="menu list-inline">
+                     <br><br><br>
+                     <li>
+                        <a href="#">ZotZot Home</a>
+                      </li>
+
+                      <li>
+                         <a href="#">ZotZot & Go</a>
+                      </li>
+
+                      <li>
+                        <a href="#">ZotZot & Stay</a>
+                      </li>
+
+                      <li>
+                        <a href="#">ZotZot & Enjoy</a>
+                      </li>
+                      </ul>
+              </div>
+        </div>
     </footer>
-    
-    
+
+
     <div class="copyright">
      <div class="container">
-       
+
          <div class="row text-center">
           <p>Copyright © 2017 All rights reserved</p>
          </div>
-         
+
      </div>
     </div>
+
      
      
     <!-- End -->
@@ -178,11 +148,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <script type="text/javascript" src="assets/javascript/app.js"></script>
-<script type="text/javascript">
+<script type="text/javascript" src="assets/javascript/returnResult.js"></script>
+<script type="text/javascript" src="assets/javascript/explorerJS.js"></script>
 
+<script type="text/javascript">
+backTrack();
 $(document).ready(function() {
     eventAPI();
-    visitDays();
+    
 });
 </script>
 </body>

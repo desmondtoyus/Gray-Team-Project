@@ -56,14 +56,14 @@
 	      <div class="col-lg-6">
 	        <div class="panel panel-default">
 	          <div class="panel-heading">
-	            <h3 class="panel-title">User Information</h3>
+	            <h3 class="panel-title">Password:</h3>
 	          </div>
 	          <div class="panel-body" id="recent-member">
-	            <h2 id="firstName-display">Johnny</h2>
+	            <!-- <h2 id="firstName-display">Johnny</h2>
 	            <h2 id="lastName-display">Appleseed</h2>
 	            <h4 id="userName-display">Username: jappleseed
-	            <h4 id="email-display">Email: johnnyappleseed@uci.edu</h4>
-	            <p id="password-display">Password: Password</p>
+	            <h4 id="email-display">Email: johnnyappleseed@uci.edu</h4> -->
+	            <p id="password-display">Password</p>
 	          </div>
 	        </div>
 	      </div>
@@ -105,9 +105,8 @@
 
   // Create a variable to reference the database
   var database = firebase.database();
-
-  var userName = "";
-  var email = "";
+  
+  var user = "";
   var password = "";
 
   // Capture Button Click
@@ -115,41 +114,41 @@
   	// Don't refresh the page!
   	event.preventDefault();
 
-  	// Code in the logic for storing and retrieving user information.
-  	userName = $("#userName-input").val().trim();
-  	// email = $("#email-input").val().trim();
+  	// var user = $("#userName-input").val().trim();
+  	// var userName = $("#userName-input").val().trim();
+  	var userCheck = $("#userName-input").val().trim();
 
-  	// database.ref().set({
-  	//   firstName: firstName,
-  	//   lastName: lastName,
-  	//   userName: userName,
-  	//   email: email,
-  	//   password: password,
-  	// });
+  	console.log(userCheck);
+
+  	// If the user exists display password
+  	
+
+  	  // $("#user_name_err").html("Invalid Log-In Input");
+  	  // return false;
+
+  	  // If user exists
+  	  database.ref('/users/').on('value', function(snapshot){
+
+  	  if(snapshot.child(userCheck).exists()) {
+
+  	  		var pass=snapshot.child(userCheck).val().password;
+  	    $("#password-display").text(pass);
+
+  	    console.log(snapshot.child(userCheck).val().password);
+
+  	}
+  	else
+  	{
+  		$("#password-display").text("The username you've enetered doesn't match any account. ");
+  		console.log("Invalid");
+  	}
+  })
+
+  	event.preventDefault();
+
   });
 
-  // Firebase watch + initial loader 
-  database.ref().on("value", function(snapshot) {
 
-  	// Log everything that's coming out of snapshot
-  	console.log(snapshot.val());
-  	console.log(snapshot.val().firstName);
-  	console.log(snapshot.val().lastName);
-  	console.log(snapshot.val().userName);
-  	console.log(snapshot.val().email);
-  	console.log(snapshot.val().password);
-
-  	// Change the HTML to reflect
-  	$("#firstName-display").html(snapshot.val().firstName);
-  	$("lastName-display").html(snapshot.val().lastName);
-  	$("#userName-display").html(snapshot.val().userName);
-  	$("#email-display").html(snapshot.val().userName);
-  	$("#password-display").html(snapshot.val().password);
-
-  	// Handle the errors
-  }, function(errorObject) {
-  	console.log("Errors handled: " + errorObject.code);
-  });
 </script>
 
 </body>

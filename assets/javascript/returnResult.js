@@ -3,6 +3,10 @@ var checkOut = sessionStorage.getItem('endDate');
 var days =sessionStorage.getItem('dayOfVisit')
 var lat=0;
 var log=0;
+ var eventArr = [];
+  var hotelArr = [];
+ var number_of_events = 0;
+ var flightArr=[];
 
 function destinationLat() {
 var geocoder =  new google.maps.Geocoder();
@@ -68,7 +72,7 @@ function hotelAPI(){
   	for (i=0; i< total; i++){  
   		var hotelDiv = $("<div>");
   		hotelDiv.addClass("col-sm-4");
-  		hotelDiv.html('<div class="card hovercard"><img src="http://placehold.it/300x200/000000/&text=Arts" alt=""/><div class="avatar"><img src="data:application/octet-stream;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQBAMAAAB8P++eAAAAG1BMVEUzMzOWlpZwcHBkZGSJiYl9fX1LS0s/Pz9YWFh71KIoAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAsElEQVRIie3RsQ6CMBCA4TuklLVIUkeaEF1lckWCsqIxcW3iC7Q+Aby5pYnryeZy/9DpS9q7AnAcx3F/yRxXwvO4nOh+uazQ6+DmulsH06oDfA9Ky7ojsbcG0Dybk+jqkYINzBaHcLV3UlPwDr7CaYET+USplGrDJOiSck/BvOx7HSG8bhUBRQtyG2EOGfVGDB94iRAtOcxsw297B+lBFOR6zIJnB4mWD3rhHMdx3LcPN+4ZoSoGtt8AAAAASUVORK5CYII=" alt="" /></div><div class="info"><div class="title">'+response.results[i].property_name+'</div><div class="desc-options"><div class="desc-hotel">'+response.results[i].address.line1+'</div><div class="desc-hotel">'+response.results[i].address.city+', '+response.results[i].address.region+''+response.results[i].address.postal_code+'</div><div class="desc-hotel">Total Price for '+ response.results[i].rooms[0].rates[0].start_date+' to '+ response.results[i].rooms[0].rates[0].start_date+': $'+response.results[i].rooms[0].rates[0].price+'</div><div class="desc-hotel">Minimum Daily Rate: $'+ response.results[i].min_daily_rate.amount+'</div></div> <a class="btn btn-primary center-block" id="flight" href="fights.html">Check Flight</a></div></div>');
+  		hotelDiv.html('<div class="card hovercard"><div class="avatar"><i class="glyphicon glyphicon glyphicon-home" style="font-size:40px; color:#312c32; background-color: #daad86; padding: 30px; border-radius:50%; text-align: center; margin-top: 20px "></i></div><div class="info"><div class="title">'+response.results[i].property_name+' </div><div class="desc-options"><div class="desc-hotel">'+response.results[i].address.line1+'</div><div class="desc-hotel">'+response.results[i].address.city+', '+response.results[i].address.region+''+response.results[i].address.postal_code+'</div><div class="desc-hotel">Total Price for '+ response.results[i].rooms[0].rates[0].start_date+' to '+ response.results[i].rooms[0].rates[0].start_date+': $'+response.results[i].rooms[0].rates[0].price+'</div><div class="desc-hotel">Minimum Daily Rate: $'+ response.results[i].min_daily_rate.amount+'</div></div> <button class="btn btn-primary center-block select_hotel" id="choose_hotel" data-name='+response.results[i].property_name+' data-address='+response.results[i].address.line1+'  data-city='+response.results[i].address.city+' data-state='+response.results[i].address.region+' data-post_code='+response.results[i].address.postal_code+' data-totalPrice='+response.results[i].rooms[0].rates[0].price+' data-dailyPrice='+ response.results[i].min_daily_rate.amount+ ' data-index='+i+' >Select Hotel</button></div></div>');
   		$(".hotel-category").append(hotelDiv);
 
   	}
@@ -155,21 +159,106 @@ $("#find-flights").on("click", function(){
  var airportTo = sessionStorage.getItem('airportTo');
  var startDate = sessionStorage.getItem('startDate');
   var dayOfVisit = sessionStorage.getItem('dayOfVisit');
-var flightQuery='http://api.sandbox.amadeus.com/v1.2/flights/extensive-search?origin='+airportFrom+'&destination='+airportTo+'&departure_date='+startDate+'&duration='dayOfVisit'&apikey=kGzyspbq8pbK3b4fmrAG9kA4ksR7VA3G';
+var flightQuery='http://api.sandbox.amadeus.com/v1.2/flights/extensive-search?origin='+airportFrom+'&destination='+airportTo+'&departure_date='+startDate+'&duration='+dayOfVisit+'&apikey=kGzyspbq8pbK3b4fmrAG9kA4ksR7VA3G';
  $.ajax({
   url: flightQuery,
   method:'GET'
  }).done(function(response){
  console.log(response);
  var displayArline = $("<div>");
- displayArline.html('<div class="col-sm-4"><div class="card hovercard"><div class="info"><div class="title flight-title">'+response.results[0].airline+'</div><div class="desc-options" id="flight-result"><div class="flight-info"> Departure Date: '+response.results[0].departure_date+'</div><div class="flight-info">Destination: '+response.results[0].destination+'</div><div class="flight-info">Price: $'+response.results[0].price+'</div><div class="flight-info"> Return Date'+response.results[0].return_date+'</div><br><button class="btn btn-primary btn-block" id="flight_button" data-airline='+response.results[0].airline+' data-airline='+response.results[0].departure_date+'data-destination='+response.results[0].destination+' data-price='+response.results[0].price+' data-return'+response.results[0].return_date+'>Select Flight</button></div></div></div></div>');
+ displayArline.html('<div class="col-sm-4"><div class="card hovercard"><div class="info"><div class="title flight-title">'+response.results[0].airline+'</div><div class="desc-options" id="flight-result"><div class="flight-info"> Departure Date: '+response.results[0].departure_date+'</div><div class="flight-info">Destination: '+response.results[0].destination+'</div><div class="flight-info">Price: $'+response.results[0].price+'</div><div class="flight-info"> Return Date'+response.results[0].return_date+'</div><br><button class="btn btn-primary btn-block flight_button2" id="flight_button" data-startDate='+response.results[0].departure_date+' data-destination='+response.results[0].destination+' data-price='+response.results[0].price+' data-endDate='+response.results[0].return_date+' data-airline='+response.results[0].airline+'>Select Flight</button></div></div></div></div>');
 $("#flights").append(displayArline);
 
  })
 
 
 })
+
+//save the event the user clicks
+$(document).on('click', ".select_event", function(){
+
+// var eventLink=$(this).attr('data-href');
+// var eventSrc=$(this).attr('data-imgscr');
+// var eventTitle=$(this).attr('data-title');
+var index = $(this).attr('data-index');
+// var obj = {eventLink: eventLink, eventsrc: eventSrc, eventTitle:eventTitle};
+ console.log(index);
+ eventArr.push(index);
+
+sessionStorage.setItem('events', eventArr);
+console.log(sessionStorage.getItem('events'));
+
+number_of_events++;
+$('#event_selected').text(number_of_events+" Events Selected");
+$(this).attr('disabled',true);
+
+})
+$('#continue').on('click',function(){
+  if (number_of_events>0)
+  {
+window.location.href='explore.html';
+  }
+  else
+  {
+    $('#event_selected').text('Select atleast one event');
+  }
+
+
+
+ })
+
+
+$(document).on('click', ".select_hotel", function(){
+
+// var address=$(this).attr('data-address');
+// var totalPrice=$(this).attr('data-totalPrice');
+// var dailyPrice=$(this).attr('data-dailyPrice');
+// var hotelName=$(this).attr('data-name');
+// var city=$(this).attr('data-city');
+// var PostCode=$(this).attr('data-post_code');
+// var state=$(this).attr('data-state');
+// console.log(totalPrice);
+var index=$(this).attr('data-index');
+
+// var obj = {address: address, totalPrice: totalPrice, dailyPrice: dailyPrice, hotelName: hotelName};
+ 
+sessionStorage.setItem('hotel', index);
+console.log(sessionStorage.getItem('hotel'));
+window.location.href='explore.html';
+// number_of_events++;
+// $('#event_selected').text(number_of_events+" Events Selected");
+// $(this).attr('disabled',true);
+
+})
 // function twoAirports()
 // {
 //   if(sessionStorage)
 // }
+$(document).on('click', '.flight_button2', function(){
+var startDate =$(this).attr('data-startDate');
+var airline =$(this).attr('data-airline');
+var destination =$(this).attr('data-destination');
+var price =$(this).attr('data-price');
+var returnDate=$(this).attr('data-endDate');
+console.log(airline);
+
+// var obj = {startDate: startDate, airline: airline, destination: destination, price:price, returnDate: returnDate};
+// flightArr.push(obj);
+// console.log(flightArr);
+sessionStorage.setItem('flightName', airline);
+sessionStorage.setItem('flightPrice', price);
+sessionStorage.setItem('flightDestination', destination);
+sessionStorage.setItem('flightStart', startDate);
+sessionStorage.setItem('flightEnd', returnDate);
+window.location.href='explore.html'
+
+
+//var obj = {eventLink: eventLink, eventsrc: eventSrc, eventTitle:eventTitle};
+ //eventArr.push(obj);
+// data-price
+// data-endDate
+// data-startDate
+//data-airline
+
+// data-destination
+})

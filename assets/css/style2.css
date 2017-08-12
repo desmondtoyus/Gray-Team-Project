@@ -593,7 +593,7 @@ label.error {
     margin-top: 15px;
     padding: 11px 20px 11px 20px;
 }
-#hotel:hover {
+#choose_hotel:hover , #event:hover, #hotel:hover {
     background-color: #312c32 ;
     color: white;
     border: none;
@@ -603,7 +603,7 @@ label.error {
     padding: 11px 20px 11px 20px;
 }
 
-#hotel {
+#choose_hotel, #event, #hotel {
     background-color: #98dafc ;
     color: #312c32 ;
     border: none;
@@ -611,4 +611,44 @@ label.error {
     font-family: Roboto;
     margin-top: 15px;
     padding: 11px 20px 11px 20px;
+}
+#find-flights{
+  cursor: pointer;
+}
+
+
+#change_event, #change_hotel, #change_flight, #continue {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 300px;
+  height: 45px;
+  padding-right: 60px;
+  padding-left: 60px;
+  vertical-align: center;
+  background-color: #98dafc;
+  color: #312c32;
+  border: none;
+}
+
+#change_event:hover, #change_hotel:hover, #change_flight:hover, #continue:hover {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 300px;
+  margin-right: 50%;
+  height: 45px;
+  padding-right: 60px;
+  padding-left: 60px;
+  vertical-align: center;
+  background-color: #312c32;
+  color: white;
+  border: none;
+}
+
+@media only screen and (max-width: 500px) {
+
+.hotel-category {
+  position: relative;
+  margin-top: 230px;
+}
+
 }

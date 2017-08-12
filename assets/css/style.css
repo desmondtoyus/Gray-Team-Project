@@ -24,10 +24,10 @@ body h1 h2 h3{
    font-family: 'Lato', sans-serif;
    color: #312c32;
 }
-/*.text-center {
+.text-center {
   font-size: 30px;
   margin-top: 150px;
-}*/
+}
 
 /* font Awesome http://fontawesome.io*/
 @import url('assets/css/bootstrap.min.css');

@@ -18,6 +18,7 @@
   };
   firebase.initializeApp(config);
   var database = firebase.database();
+
     
     var firstName ="";
      var lastName ="";
@@ -135,6 +136,7 @@ else{
    
 })
 
+ var arr = [];
  // if( database.ref("/users/").child(userName).exists())
  // {
 
@@ -235,8 +237,20 @@ var guest=$("#guest").val().trim();
     sessionStorage.setItem('guest', guest);
    $("#guest_div").hide();
    // time for the api query
-  
-  window.location.href = "category.html";
+   var mysource = sessionStorage.getItem('source');
+   var myDestination = sessionStorage.getItem('destination');
+ myDestinationArr=myDestination.split(',');
+   mySourceArr=mysource.split(',');
+   visitDays();
+   sessionStorage.setItem("hotelprice", '0');
+   sessionStorage.setItem("flightPrice", '0');
+   sessionStorage.setItem("eventPrice", '0');
+
+sessionStorage.setItem("state", myDestinationArr[1]);
+  sessionStorage.setItem("city", myDestinationArr[0]);
+  sessionStorage.setItem("stateSource", mySourceArr[1]);
+  sessionStorage.setItem("citySource", mySourceArr[0]);
+  window.location.href = "explore.html";
 
   }
 
@@ -318,10 +332,10 @@ var category=$(this).text();
   mystartDate =mystartDate+"T00%3A00%3A00Z";
    myendDate =myendDate+"T23%3A59%3A59Z";
 
-   sessionStorage.setItem("state", myDestinationArr[1]);
-  sessionStorage.setItem("city", myDestinationArr[0]);
-  sessionStorage.setItem("stateSource", mySourceArr[1]);
-  sessionStorage.setItem("citySource", mySourceArr[0]);
+  //  sessionStorage.setItem("state", myDestinationArr[1]);
+  // sessionStorage.setItem("city", myDestinationArr[0]);
+  // sessionStorage.setItem("stateSource", mySourceArr[1]);
+  // sessionStorage.setItem("citySource", mySourceArr[0]);
 
 
    console.log("startDate "+mystartDate );
@@ -344,7 +358,7 @@ var category=$(this).text();
       if(i===0){
       var resultHolder1 =$("<div>");
       resultHolder1.addClass("col-md-8 thumbnail");
-      resultHolder1.html('<article class="col-item results_item"><div class="photo results_photo"><a href='+total[i].url+'> <img src='+total[i].images[3].url+' class="img-responsive constraint" alt="Product Image"/> </a></div><div class="info"><div class="row"><div class="price-details col-md-6"><div id="divName" class="results-title">'+total[i].name+'</div><div id="divDate" class="results-info"> '+total[i].dates.start.localDate+'</div><div id="divGenre" class="results-info"> '+total[i].dates.start.localTime+' </div><div id="divAddr" class="results-info">'+total[i].classifications[0].segment.name+'</div><div class="results-info">'+total[i].classifications[0].genre.name+'</div><div class="results-info"> '+total[i]._embedded.venues[0].name+'</div><div class="results-info">'+total[i]._embedded.venues[0].address.line1+'</div><div class="results-info">'+total[i]._embedded.venues[0].city.name+' '+total[i]._embedded.venues[0].state.name+' '+total[i]._embedded.venues[0].postalCode+'</div><div class="results-info">'+total[i]._embedded.venues[0].country.name+'</div></div></div></div> <a class="btn btn-primary center-block" id="hotel" href="hotel2.html">View Hotels</a></article>');
+      resultHolder1.html('<article class="col-item results_item"><div class="photo results_photo"><a href='+total[i].url+'> <img src='+total[i].images[3].url+' class="img-responsive constraint" alt="Product Image"/> </a></div><div class="info"><div class="row"><div class="price-details col-md-6"><div id="divName" class="results-title">'+total[i].name+'</div><div id="divDate" class="results-info"> '+total[i].dates.start.localDate+'</div><div id="divGenre" class="results-info"> '+total[i].dates.start.localTime+' </div><div id="divAddr" class="results-info">'+total[i].classifications[0].segment.name+'</div><div class="results-info">'+total[i].classifications[0].genre.name+'</div><div class="results-info"> '+total[i]._embedded.venues[0].name+'</div><div class="results-info">'+total[i]._embedded.venues[0].address.line1+'</div><div class="results-info">'+total[i]._embedded.venues[0].city.name+' '+total[i]._embedded.venues[0].state.name+' '+total[i]._embedded.venues[0].postalCode+'</div><div class="results-info">'+total[i]._embedded.venues[0].country.name+'</div></div></div></div> <button class="btn btn-primary center-block select_event" id="hotel" data-href='+total[i].url+' data-imgscr='+total[i].images[3].url+' data-title='+total[i].name+' data-index='+i+'>Select Event</button></article>');
       $("#preffered_result").append(resultHolder1);
 
       }
@@ -353,7 +367,7 @@ var category=$(this).text();
 
       var resultHolder =$("<div>");
       resultHolder.addClass("col-md-4 const thumbnail thumbnail2");
-      resultHolder.html('<article class="col-item results_item"><div class="photo results_photo"><a href='+total[i].url+'> <img src='+total[i].images[1].url+' class="img-responsive constraint" alt="Product Image"/> </a></div><div class="info"><div class="row"><div class="price-details col-md-6"><div id="divName" class="results-title">'+total[i].name+'</div><div id="divDate" class="results-info"> '+total[i].dates.start.localDate+'</div><div id="divGenre" class="results-info"> '+total[i].dates.start.localTime+' </div><div id="divAddr" class="results-info">'+total[i].classifications[0].segment.name+'</div><div class="results-info">'+total[i].classifications[0].genre.name+'</div><div class="results-info"> '+total[i]._embedded.venues[0].name+'</div><div class="results-info">'+total[i]._embedded.venues[0].address.line1+'</div><div class="results-info">'+total[i]._embedded.venues[0].city.name+' '+total[i]._embedded.venues[0].state.name+' '+total[i]._embedded.venues[0].postalCode+'</div><div class="results-info">'+total[i]._embedded.venues[0].country.name+'</div></div></div></div><a class="btn btn-primary center-block" id="hotel" href="hotel2.html">View Hotels</a></article>');
+      resultHolder.html('<article class="col-item results_item" ><div class="photo results_photo"><a href='+total[i].url+'> <img src='+total[i].images[1].url+' class="img-responsive constraint" alt="Product Image"/> </a></div><div class="info"><div class="row"><div class="price-details col-md-6"><div id="divName" class="results-title">'+total[i].name+'</div><div id="divDate" class="results-info"> '+total[i].dates.start.localDate+'</div><div id="divGenre" class="results-info"> '+total[i].dates.start.localTime+' </div><div id="divAddr" class="results-info">'+total[i].classifications[0].segment.name+'</div><div class="results-info">'+total[i].classifications[0].genre.name+'</div><div class="results-info"> '+total[i]._embedded.venues[0].name+'</div><div class="results-info">'+total[i]._embedded.venues[0].address.line1+'</div><div class="results-info">'+total[i]._embedded.venues[0].city.name+' '+total[i]._embedded.venues[0].state.name+' '+total[i]._embedded.venues[0].postalCode+'</div><div class="results-info">'+total[i]._embedded.venues[0].country.name+'</div></div></div></div><button class="btn btn-primary center-block select_event" id="hotel" data-href='+total[i].url+' data-imgscr='+total[i].images[1].url+' data-title='+total[i].name+' data-index='+i+'>Select Event</button>');
       $("#result_content").append(resultHolder);
     }
   }
@@ -403,6 +417,25 @@ function visitDays(){
 console.log('days='+dayOfVisit);
  sessionStorage.setItem("dayOfVisit", dayOfVisit);
 }
+
+// $(document).on('click', ".select_event", function(){
+
+// var eventLink=$(this).attr('data-href');
+// var eventSrc=$(this).attr('data-imgscr');
+// var eventTitle=$(this).attr('data-title');
+//   alert(eventTitle);
+ 
+
+
+// var obj = {eventLink: eventLink, eventsrc: eventSrc, eventTitle:eventTitle};
+//     arr.push(obj);
+
+// sessionStorage.setItem('events', JSON.stringify(arr));
+// console.log(sessionStorage.getItem('events'));
+
+// })
 //to split the date and city array. city is a variable name
  //Arr=city.split(',')
  //T00%3A00%3A00Z
+ // var obj = {x: 54, y: 10};
+ //    arr.push(obj);
