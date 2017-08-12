@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+  <head>
+
+  <meta charset="UTF-8">
+  <title>iTravel App</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- My CSS -->
+
+  <link rel="stylesheet" type="text/css" href="assets/css/style2.css">
+
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="styleshee√t">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+  <!-- Header -->
+<div class="container">
+<div class="container">
+  <div class="search-text"> 
+         <div class="row">
+         <div class="header">
+         <div class="logo col-sm-1 col-xs-12">
+           <a href=""><img src="assets/images/zotzot-logo-horizontal2_1x.png" style="width: 130px; height: 61px; margin-right: 20px" ></a>
+         </div>
+            <div class="form col-sm-10 col-xs-12">
+                <div class="user_search col-sm-3 col-xs-12 search-fields">
+                    <input type="text" class="form-control input-search" placeholder="Where">
+                </div>
+                <div class="user_destination col-sm-3 col-xs-12 search-fields">
+                    <input type="text" class="form-control input-search" placeholder="When">
+                </div>
+                  <div class="user_budget col-sm-3 col-xs-12 search-fields">
+                  <div class="input-group" style="height: 45px; margin-top: 15px;">
+                    <span class="input-group-addon">$</span>  
+                    <input type="text" value="" class="form-control" style="height: 45px;" aria-label="Amount (to the nearest dollar)" id="budget">
+                  </div>
+                    
+                </div>
+                <div class="user_search_submit col-sm-3 col-xs-12 search-fields">
+                    <button type="submit" class="form-control btn-search">Search</button>
+                </div>
+                </form>
+            </div>
+            </div>
+          </div>         
+       </div>     
+  </div>
+    
+
+  <!-- Results -->
+
+  <div class="row results">
+<div id="event_selected"> </div>
+   <!-- Results Text --><button  class="form-control btn-search" id="continue">Continue</button>
+        <div class="col-sm-4">
+        <br>
+            <h2>New York City – Results Page</h2>
+            <p>New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean. At its core is Manhattan, a densely populated borough that’s among the world’s major commercial, financial and cultural centers. Its iconic sites include skyscrapers such as the Empire State Building and sprawling Central Park. Broadway theater is staged in neon-lit Times Square.</p>
+        </div>
+      
+
+
+        <!-- Top Result -->
+        <br>
+        <div id="preffered_result">
+          
+        </div>
+<!--   =========================================================================================================
+  First Result
+  ========================================================================================================= -->
+        <div id="result_content">
+
+       
+
+
+      </div>
+ 
+  </div>
+  </div>
+
+     
+<br><br><br><br><br><br> 
+     
+     
+    <!-- Footer -->
+
+    <footer>
+       <div class="container">
+              <div class="row text-center">
+                     <ul class="menu list-inline">
+                     <br><br><br>
+                     <li>
+                        <a href="#">ZotZot Home</a>
+                      </li>
+
+                      <li>
+                         <a href="#">ZotZot & Go</a>
+                      </li>
+
+                      <li>
+                        <a href="#">ZotZot & Stay</a>
+                      </li>
+
+                      <li>
+                        <a href="#">ZotZot & Enjoy</a>
+                      </li>
+                      </ul>
+              </div>
+        </div>
+    </footer>
+
+
+    <div class="copyright">
+     <div class="container">
+
+         <div class="row text-center">
+          <p>Copyright © 2017 All rights reserved</p>
+         </div>
+
+     </div>
+    </div>
+
+     
+     
+    <!-- End -->
+    
+
+
+
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
+
+    <!-- Moment.js Reference -->
+    <!-- <script src="http://momentjs.com/downloads/moment.js"></script>   -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!--   <script type="text/javascript" src="assets/javascript/app.js"></script>  -->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script type="text/javascript" src="assets/javascript/app.js"></script>
+<script type="text/javascript" src="assets/javascript/returnResult.js"></script>
+<script type="text/javascript" src="assets/javascript/explorerJS.js"></script>
+
+<script type="text/javascript">
+backTrack();
+$(document).ready(function() {
+    eventAPI();
+    
+});
+</script>
+</body>
+</html>

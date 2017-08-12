@@ -20,7 +20,7 @@
 
 <body>
 
-  <!-- Welcome Screen -->
+ <!-- Login Screen -->
     <div class="container">
       <div class="row">
       <div class="col-xs-12 welcome">
@@ -31,31 +31,39 @@
       <div class="col-xs-12 welcome brand app-logo-watermark">
         <img alt="" src="assets/images/zotzot-logo-round_1x.png" style="width: 50%;">
       </div>
-  <!-- Welcome Header-->
-        <div class="col-lg-3 col-md-offset-5">
-        <h3 class="text-center">welcome to zotzot</h3>
-        <br>
-  <!-- Buttons -->
-         
-          
-          <a class="btn btn-primary center-block" id="user_login" href="user-registration.html">Create Account</a>
-          <br>
-          <button class="btn btn-primary center-block" id="facebook_login" type="submit">Continue with Facebook</button>
-          <br>
-          <a class="btn btn-primary center-block" id="login" href="login.html">Log In</a>
-        </div>
 
+  <!-- Login Header-->
+        <div class="col-lg-3 col-md-offset-5">
+        <h3 class="text-center">login to zotzot</h3>
+        <br>
+
+  <!-- User Form Input Fields-->
+
+      
+        <div id="user_name_err"></div>
+        <label for="user_name" class="sr-only">User Name</label>
+        <input type="text" id="user_name" class="form-control" placeholder="User Name">
+        <label for="user_password" class="sr-only">Password</label>
+        <div id="user_password_err"></div>
+        <input type="password" id="user_password" class="form-control" placeholder="Password">
+        <a class="forgot_password" value="forgot-password" href="#">Forgot Password?</a>
+        <br>
+        <br>
+        <button class="btn btn-primary btn-block" id="user_login">Login In</button>
+      
+
+      </div>
       </div>
       </div>
 
     </div>
+    </div>
 
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
 
-  <!-- Firebase Reference -->
-  <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
-
-  <!-- Moment.js Reference -->
-  <!-- <script src="http://momentjs.com/downloads/moment.js"></script>   -->
+    <!-- Moment.js Reference -->
+    <!-- <script src="http://momentjs.com/downloads/moment.js"></script>   -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="assets/javascript/app.js"></script>
@@ -65,7 +73,5 @@
 
 <!-- load jQuery UI CSS theme -->
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-  
-
 </body>
 </html>
