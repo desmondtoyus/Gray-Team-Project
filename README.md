@@ -1,3 +1,3 @@
 # Gray-Team-Project
 
-Link: https://zotzot.us
+Link: https://www.zotzot.us
